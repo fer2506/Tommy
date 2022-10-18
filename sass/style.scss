@@ -1,0 +1,127 @@
+$bg: linear-gradient(to left, #AB85AB, #C2DDCA);
+$filler-bg: linear-gradient(to right, #AB85AB, #C2DDCA);
+$form-bg: rgba(255,255,255,0.5); 
+$font-color:#535E56;
+$input-border: 2px solid #AB85AB;
+$title-color:#fff;
+$btn-shadow:0 0 2px #fff;
+$btn-color:#fff;
+$btn-hover:5px 5px 7px #fff;
+$mobile-bg-color:#E6D4FA;
+$mobile-font-color: #AB85AB;
+
+body{
+  background-image: $bg;
+  margin: 0;
+  height:100wh;
+  font-family: 'Raleway', sans-serif;
+  font-color: $font-color;
+}
+#container{
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:50px;
+  margin-bottom:50px;
+  width:420px;
+}
+
+h1 {
+  font-family: 'Dancing Script', serif;
+  color: $title-color;
+  padding-left:20px;
+  font-size:40px;
+  line-height:50px;
+  margin:0;
+}
+
+.filler{
+  background-image:$filler-bg;
+  width:390px;
+  margin:5px;
+}
+
+#contact-form{
+  background-color:$form-bg;
+  padding:10px;
+  input, textarea{
+    font-family: 'Raleway', sans-serif;
+    width:380px;
+    margin:5px;
+    padding:6px;
+    border:none;
+    border-radius:10px;
+    
+    &:focus{
+      padding:4px;
+      border: $input-border;
+      outline:none;
+    }
+  }
+  
+  button{
+    font-family: 'Dancing Script', sans-serif;
+    text-align:left;
+    width:100%;
+    background-color:rgba(0,0,0,0);
+    border:none;
+    padding: 10px 0;
+    padding-left:20px;
+    cursor:pointer;
+    color:$btn-color;
+    font-size:30px;
+    line-height:20px;
+    transition:1s;
+    
+    &:active{
+      border:none;
+      outline:none;
+      text-shadow:$btn-shadow;
+    }
+    &:hover{
+      box-shadow:$btn-hover;
+    }
+  }
+}
+
+#message{
+  height:100px;
+  resize:none;
+}
+
+@media only screen and (max-width: 500px){
+  body{
+    background-image:none;
+    background-color:$mobile-bg-color;
+  }
+  #container{
+    margin:auto;
+    width:100%;
+  }
+  .filler{
+    background-image:none;
+    width:90%;
+    margin:auto;
+  }
+  h1{
+    color:$mobile-font-color;
+  }
+  #contact-form{
+    background-color:rgba(0,0,0,0);
+    
+    input, textarea{
+      width:90%;
+      margin-left:auto;
+      margin-right:auto;
+      display:block;
+      margin-top:20px;
+    }
+    button{
+      color:$mobile-font-color;
+      
+      &:hover{
+        box-shadow:none;
+      }
+    }
+  }
+  
+}

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
+html {
+  font-family: "Lucida Sans", sans-serif;
+}
+
+.titulo-color {
+  background: linear-gradient( #0719F5,  #F50715);
+  color: transparent;
+  -webkit-background-clip: text;
+ 
+}
+
+/* Para Teléfonos Móviles: */
+[class*="col-"] {
+  width: 100%;
+
+}
+
+@media not screen and (min-width: 600px){
+  /* Para Tablets: */
+  .body{
+    background-image: linear-gradient(to left,#FAD7A0,#0719F5,#FAD7A0  );
+  }.footer{
+    display:none;
+  }
+    
+  .col-s-1 {width: 8.33%; }
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%; }
+}
+
+@media only screen and (min-width: 1280px) {
+  /* Para Escritorio: */
+  .body{
+    background-image: linear-gradient(to left,#FAD7A0,#E74C3C,#FAD7A0  );
+  }.footer{
+    display:none;
+  }
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+
+
+
+}
+
+.item1 { grid-area: mujeres; }
+.item2 { grid-area: catalogo; }
+.item3 { grid-area: hombres; }
+.item4 { grid-area: tallas; }
+.item5 { grid-area: niños; }
+.item6 { grid-area: niñas; }
+
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'catalogo mujeres mujeres mujeres mujeres mujeres tallas'
+    'catalogo hombres hombres hombres hombres hombres tallas'
+    'catalogo niños niños niños niños niños tallas'
+    'catalogo niñas niñas niñas niñas niñas tallas';
+  grid-gap: 5px;
+  background-color: #F4F6F7;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-image: linear-gradient(to left, #0509F3,#F30522  );
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+#trancisiones{
+  width: 100%;
+  height: 100%;
+  transition: width 2s, height 4s, transform 2s;
+}
+
+#trancisiones:hover {
+  width: 100%;
+  height: 100%;
+  transform: rotate(360deg);
+}
+@keyframes cambiar  {
+  0%   {background-color:blueviolet; left:0px; top:0px; transform:scale(1);}
+  25%  {background-color:yellow; left:200px; top:0px;  transform:scale(1.6);}
+  50%  {background-color:blue; left:200px; top:200px; transform:scale(2);}
+  75%  {background-color:green; left:0px; top:200px;  transform:scale(2.6);}
+  100% {background-color:blueviolet; left:0px; top:0px;transform:scale(1);}
+}
+
+#cambiar:hover{
+  width: 100px;
+  height: 100px;
+  background-color: blueviolet;
+  position: relative;
+  animation-name: example;
+  animation-name: cambiar;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes mover{
+    0%{
+    transform:translate(0);
+    }
+    25%{
+    transform:translate(25%);
+    }
+    50%{
+    transform:translate(50%);
+    }
+    75%{
+    transform:translate(75%);
+    }
+    100%{
+    transform:translate(100%) translateY(100%);
+    }  
+}
+#mover:hover{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  animation-name: cambiar;
+  animation-name: mover;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#triplicar{
+  width: 100%;
+  transform: rotate(360deg);
+}
+#triplicar:hover{
+  width: 10px;
+  height: 300px;
+  transition-property: width;
+  transition-duration: 10s;
+ 
+}
+#carteras{
+  width: 50%;
+  height: 50%;
+}
+div#myDiv1 {
+  transform: matrix(1, 0, 0.3, 1, 150, 0);
+}
+div#myDiv2 {
+  transform: matrix(1, 0, 0.3, 1, 150, 0);
+}
+#mariconeras{
+  width: 50%;
+  height: 50%;
+ 
+}
+
+div#myDiv {
+  transform: rotate(20deg);
+}
+
+#myDiv {
+    transform: rotate3d(1, 1, 1, 45deg);
+}
+</style>
+</head>
+<body class="body">
+
+<div >
+  <img src="img/zNLZtOMewjng.jpg" alt="" width="5%" height="5%">
+<center>
+  <h1 class="titulo-color">TOMMY HILFIGER </h1>
+</center>
+</div>
+<div class="footer">
+  <center>
+  <p>TOMMY HILFIGER es una de las marcas de estilo de vida de diseñadores líderes en el mundo y es reconocida internacionalmente por celebrar la esencia del estilo cool estadounidense clásico, presentando diseños preppy con un giro.</p>
+</center>
+</div>
+
+<div class="grid-container">
+  <div class="item1"><div id="cambiar"><img src="img/descarga.jpeg"> </div><br>Mujeres  </div>
+  <div class="item2">Catalogo</div>
+  <div class="item3"><div id="triplicar"><img src="img/658e051c-b2c8-4581-beb0-d4772e949217.__CR0,0,970,300_PT0_SX970_V1___.jpg" width="80%"></div><br>Hombres</div>
+  <div class="item4">Talla</div>
+  <div class="item5"><div id="trancisiones"><img src="img/ropa-de-moda-para-niños-varones-casual.png" width="25%"> </div><br>Niños</div>
+  <div class="item6"><div id="mover"><img src="img/32cafd40023fdb1c306d6b5e2daed9a9.jpg" width="25%"> </div><br>Niñas</div>
+</div>
+<center>
+<h2> CARTERAS</h2>
+<div id="carteras">
+  <img src="img/91K-ID4f0KL._UY741_.jpg" alt="" width="50%" height="50%">
+  
+  <div id="myDiv1">
+    <img src="img/91d0ypk5vfL._UX679_.jpg" alt="" width="50%" height="50%">
+    </div>
+    <div id="myDiv2">
+      <img src="img/AW0AW10495_0GY_1.webp" alt="" width="50%" height="50%">
+      </div>
+  </div>
+  <br>
+  <br>
+  <h2> MARICONERAS</h2>
+  <div id="mariconeras">
+    <img src="img/D_NQ_NP_752634-MLM51621502072_092022-W.jpg" alt="" width="50%" height="50%">
+    
+    <div id="myDiv1">
+      <img src="img/D_NQ_NP_823525-MLM51230404120_082022-W.jpg" alt="" width="50%" height="50%">
+      </div>
+      <br>
+      <br>
+      <div id="myDiv">
+        <img src="img/e9ff679b3ffec1d3f3688ac2119c644b56e3ac02_AW0AW082950HA001.png" alt=""width="50%" height="50%">
+        </div>
+      </center>
+</body>
+</html>
